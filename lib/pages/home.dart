@@ -5,7 +5,33 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: appBar());
+    return Scaffold(appBar: appBar(), body: body());
+  }
+
+  Column body() {
+    return Column(children: [
+      Container(
+          margin: EdgeInsets.only(top: 40, left: 20, right: 20),
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.13),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+          child: TextField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide.none),
+            ),
+          ))
+    ]);
   }
 
   AppBar appBar() {
